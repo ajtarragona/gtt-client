@@ -1,0 +1,35 @@
+{
+    "name": "ajtarragona/gtt-client",
+    "description": "Client per serveis de GTT",
+    "keywords" : ["laravel6","laravel"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Txomin Medrano Martorell",
+            "email": "tmedrano@tarragona.cat"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=7.0.0",
+        "laravel/framework": "^6.0",
+        "jtrumbull/xml-parser": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ajtarragona\\Tsystems\\": "./src"
+        }
+    },
+    
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ajtarragona\\GTT\\GTTServiceProvider"
+            ],
+            "aliases": {
+                "GTT" : "Ajtarragona\\GTT\\Facades\\GTT"
+            }
+        }
+    }
+}
