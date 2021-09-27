@@ -1,6 +1,6 @@
 <?php
 
-use App\Helpers\XML2Array;
+use Ajtarragona\GTT\XML2Array;
 
 if (! function_exists('gtt')) {
 	function gtt($options=false){

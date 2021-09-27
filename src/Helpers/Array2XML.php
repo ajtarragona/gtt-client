@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Helpers;
+namespace Ajtarragona\GTT\Helpers;
 /**
  * Array2XML: A class to convert array in PHP to XML
  * Returns the XML in form of DOMDocument class.

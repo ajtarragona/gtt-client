@@ -1,5 +1,5 @@
 <?php
-namespace App\Helpers;
+namespace Ajtarragona\GTT\Helpers;
 
 /**
  * XML2Array: A class to convert XML to an array in PHP
