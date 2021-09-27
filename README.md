@@ -16,7 +16,8 @@ Pots configurar el paquet a través de l'arxiu `.env` de l'aplicació. Aquests s
 ```bash
 GTT_DEBUG 
 GTT_WS_URL
-GTT_CERT_PASSWORD
+GTT_CERT_PATH //ruta del certificado desde storage/app
+GTT_CERT_PASSWORD 
 ```
 Alternativament, pots publicar l'arxiu de configuració del paquet amb la comanda:
 

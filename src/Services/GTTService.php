@@ -44,6 +44,11 @@ class GTTService
    
    
 
+    public function test($nombre="world"){
+        return "Hello $nombre";
+
+    }
+    
     protected function call($method, $arguments=[], $options=[]){
 
        

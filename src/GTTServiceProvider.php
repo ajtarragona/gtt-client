@@ -7,7 +7,7 @@ use Illuminate\Support\ServiceProvider;
 class GTTServiceProvider extends ServiceProvider
 {
     
-    
+
     /**
      * Bootstrap services.
      *
