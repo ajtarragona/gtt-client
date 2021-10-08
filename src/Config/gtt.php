@@ -3,8 +3,9 @@
 return [
 	
 	'debug' => env('GTT_DEBUG',false),
-	"gtt_url" => env('GTT_WS_URL', ""), 
-	"gtt_cert_password"=> env('GTT_CERT_PASSWORD', ""),
-	"gtt_cert_path"=> env('GTT_CERT_PATH', "")
+	"ws_url" => env('GTT_WS_URL', ""), 
+	"cert_password"=> env('GTT_CERT_PASSWORD', ""),
+	"cert_path"=> env('GTT_CERT_PATH', ""),
+	"sesion_orga"=> env('GTT_SESION_ORGA', ""),
 ];
 

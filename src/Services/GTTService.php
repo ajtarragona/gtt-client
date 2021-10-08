@@ -2,57 +2,52 @@
 
 namespace Ajtarragona\GTT\Services;
 
-
-use Ajtarragona\GTT\Traits\CanReturnCached;
-use Exception;
-use Illuminate\Support\Str;
-use SoapClient;
-use SoapVar;
-
+use SoapFault;
 
 class GTTService
 {
-
-    use CanReturnCached;
-
+    
+   
     protected $options;
-    protected static $business_name =  "";
     
     public function __construct($options=array()) { 
 		$opts=config('gtt');
 		if($options) $opts=array_merge($opts,$options);
-		$this->options= json_decode(json_encode($opts), FALSE);
+		$this->options = json_decode(json_encode($opts), true);
 	}
 
         
+
     protected function client(){
-        // dump($this->options->ws_url);
-        return new SoapClient($this->options->ws_url.'?wsdl',
-        array(
-            
-            'trace' => 1,
-            "stream_context" => stream_context_create(
-                array(
-                    'ssl' => array(
-                        'verify_peer'       => false,
-                        'verify_peer_name'  => false,
-                    )
-                )
-            )
-        ) );
-    }
-   
-   
-
-    public function test($nombre="world"){
-        return "Hello $nombre";
-
+        // return new MySoapClient($this->options["ws_url"]."?singleWsdl");
+        return SignedSoapClient::newClient($this->options);
     }
     
-    protected function call($method, $arguments=[], $options=[]){
+
+    public function getDadesGTT($id_contribuent){
+
+        $results = $this->client()->call('ServiciosTributos.DatosContribuyente.Datos', [
+            "InformacionContribuyente" => [
+                "Contribuyente" => [
+                    "DatosPersonales" => [
+                        "IdFiscal" =>$id_contribuent,
+                    ]
+                ], 
+                // "ObjetosTributarios" =>[
+                //     "TipoObjetoTributario" => "Vehiculo"
+                // ]
+                
+            ]
+        ]);
+
+
 
        
-        
+        // return $result;
+    }
+
+
+    protected function call($method, $arguments=[], $options=[]){
          
         
     }
