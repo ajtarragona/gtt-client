@@ -13,7 +13,7 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">=7.0.0",
-        "laravel/framework": "^6.0",
+        "laravel/framework": ">=6.0",
         "jtrumbull/xml-parser": "^1.0",
         "robrichards/wse-php": "^2.0"
     },
